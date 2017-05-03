@@ -18,17 +18,40 @@ public class HelloWorld extends HttpServlet {
 		message = "Hello World";
 	}
 
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// Set response content type
+		response.setContentType("text/html");
+
+		// Actual logic goes here.
+		String prenom = request.getParameter("prenom");
+		PrintWriter out = response.getWriter();
+		if (prenom == null) {
+			out.println("<h1>" + message + "</h1>");
+		}
+ else {
+		out.println("<h1>" + "Salut " + prenom + "</h1>");
+		}
+	}
+
+	public void destroy() {
+		// do nothing.
+	}
+
+	// La signature de cette méthode est invariable
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Set response content type
 		response.setContentType("text/html");
 
 		// Actual logic goes here.
+		String prenom = request.getParameter("prenom");
 		PrintWriter out = response.getWriter();
-		out.println("<h1>" + message + "</h1>");
+		if (prenom == null) {
+			out.println("<h1>" + message + "</h1>");
+		} else {
+			out.println("<h1>" + "Salut " + prenom + "</h1>");
+		}
 	}
 
-	public void destroy() {
-		// do nothing.
-	}
 }

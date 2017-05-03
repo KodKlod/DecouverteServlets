@@ -11,4 +11,14 @@
 		<servlet-name>HelloWorld</servlet-name>
 		<url-pattern>/bonjour</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GoodBye</servlet-name>
+		<servlet-class>co.simplon.poleEmploi.decouverteServlets.GoodBye</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GoodBye</servlet-name>
+		<url-pattern>/goodbye</url-pattern>
+	</servlet-mapping>
 </web-app>
