@@ -1,11 +1,11 @@
 <html>
 
 	<head>
-	<title>Mon site Web - index.html</title>
+	<title>Mon site Web - index.jsp</title>
 	</head>
 
 	<body>
-	<p>Découverte des Servlet - index.html</p>
+	<p>Découverte des Servlet - index.jsp</p>
 	<!--"bonjour" fait référence au contenu du fichier web.xml : <url-pattern>/bonjour</url-pattern>-->
 	<form method="post" action="bonjour">
 <!-- prenom fait référence : String prenom = request.getParameter("prenom")de la classe java appellée ligne ci-dessus  -->		
