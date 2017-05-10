@@ -7,10 +7,15 @@
 	<body>
 	<p>Découverte des Servlet - Hello.jsp</p>
 	<H2>Hello</H2>
-	<!--L'EL ci-dessous est définie dans la classe HelloWorld
-	méthode doPost
-	qui appelle hello.jsp à la place de index.jsp  -->
-	${nom}
+	<!--Les EL ci-dessous appellent des éléments de la méthode doPost
+	de la classe HelloWorld
+	cette méthode doPost se réfère elle-m^me à la présente page-->
+	1 :${nom}<br> <!--attribut du request.setAttribute("nom", prenom)-->
+	2 :${param.nom}<br><!--paramètre du String prenom = request.getParameter("prenom")-->
+	3 :${param['nom']}<br> <!--paramètre du String prenom = request.getParameter("prenom")-->
+	4 :${requestScope.nom}<br><!--attribut du request.setAttribute("nom", prenom)-->
+	une scriplet :<%=request.getHeader("User-Agent")%><br>
+	une EL : ${header['user-agent']}
 	</body>
 
 </html>
