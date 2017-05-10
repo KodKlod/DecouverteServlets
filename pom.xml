@@ -36,5 +36,10 @@
 		    <artifactId>javax.servlet.jsp-api</artifactId>
 		    <version>2.3.0</version>
 		</dependency>
+		<dependency>
+			<groupId>TpJDBC</groupId>
+			<artifactId>TpJDBC</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>
