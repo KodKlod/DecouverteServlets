@@ -13,15 +13,15 @@
 			<fieldset>
 			    <legend>Création de contact</legend>
 			    <label for="nom">Nom</label>
-			    <input type="text" id="nom">
+			    <input type="text" id="nom" name="nom">
 			    <br>
 			    <br>
 			    <label for="prenom">Prénom</label>
-			    <input type="text" id="prenom">
+			    <input type="text" id="prenom" name="prenom">
 			    <br>
 			    <br>
 			    <label for="email">email</label>
-			    <input type="text" id="email">
+			    <input type="text" id="email" name = "email">
 		  </fieldset>
 		  <br>
 		  <br>

@@ -40,13 +40,17 @@ public class CreerContact extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// Récupérer les données saisies dans les inputs de la jsp
-		// et les coller dans contact ?
+		// et les coller dans un objet contact récupéré dans le projet tpjdbc
 		Contact contact = new Contact();
-		contact.setPrenomFname(request.getParameter("nom"));
+		// Le parameter fait référence à l'attribut name de l'input
+		contact.setNomLname(request.getParameter("nom"));
 		contact.setPrenomFname(request.getParameter("prenom"));
-		contact.setPrenomFname(request.getParameter("email"));
+		contact.setMail(request.getParameter("email"));
+		// Le .setAttibute pour pouvoir appeler le résultat
+		// dans une page
+		request.setAttribute("contact", contact);
 		RequestDispatcher dispatcher;
-		dispatcher = request.getRequestDispatcher("/creerContact.jsp");
+		dispatcher = request.getRequestDispatcher("/contactCree.jsp");
 		dispatcher.forward(request, response);
 
 	}
