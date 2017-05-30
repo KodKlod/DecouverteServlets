@@ -10,16 +10,16 @@
 <body>
 	<H1>Le nouveau contact a été créé</H1>
 	<br>
-	<!--contact fait référence à l'objet contact de request.setAttribute("contact", contact) dans CreerContact.java  -->
-	<!--nomLname fait référence à l'attribut nomLname de contact.java  -->
-	Nom : ${contact.nomLname}
+	<!--contactServlet fait référence à request.setAttribute("contactServlet", contact) dans CreerContact.java  -->
+	<!--nomLname fait référence à l'attribut nomLname de Contact.java  -->
+	Nom : ${contactServlet.nomLname}
 	<br>
-	Prenom : <c:out value="${contact.prenomFname}" default="S'affiche si pas de prénom saisi"/>
+	Prenom : <c:out value="${contactServlet.prenomFname}" default="S'affiche si pas de prénom saisi"/>
 	<br>
-	<!--J'affiche ses hobbies que j'ai créé dans CreerContact.java  -->
-	<H2>Ses hobbies sont : </H2>	
+	<!--J'affiche les hobbies créés dans CreerContact.java  -->
+	<H2>Ses ${nbHobbies} hobbies sont : </H2>	
 	<ul>
-		<c:forEach items="${contact.hobbies}" var="hobby" varStatus="status">
+		<c:forEach items="${contactServlet.hobbies}" var="hobby" varStatus="status">
 			<li>Activité ${status.index} : ${hobby.activite}</li>
 		</c:forEach>
 	</ul>

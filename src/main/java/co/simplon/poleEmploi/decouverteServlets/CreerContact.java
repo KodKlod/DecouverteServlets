@@ -50,17 +50,28 @@ public class CreerContact extends HttpServlet {
 		contact.setPrenomFname(request.getParameter("prenom"));
 		contact.setMail(request.getParameter("email"));
 		// Je cree des hobbies pour mon contact
-		// A partir de l'attribut private Set<Hobbies> hobbies de Contact.java;
 		Set<Hobbies> hobbies = new HashSet<Hobbies>();
 		hobbies.add(new Hobbies(1, "Guitar"));
 		hobbies.add(new Hobbies(2, "Harmonica"));
+		// J'associe les hobbies au contact
 		contact.setHobbies(hobbies);
+
 		// Le .setAttibute pour pouvoir appeler les données
 		// dans une page définie dans le getRequestDispatcher
-		request.setAttribute("contact", contact);
+		request.setAttribute("contactServlet", contact);
+		// Je calcule le nb de hobbies du contact
+		// pour pouvoir l'afficher ensuite
+		final int size = hobbies.size();
+		request.setAttribute("nbHobbies", size);
+
+		// On peut encore simplifier en regroupant
+		// les setAttribute dans une Map
+		// et du coup on aura un seul setAttribute en référence
+
 		RequestDispatcher dispatcher;
 		dispatcher = request.getRequestDispatcher("/contactCree.jsp");
 		dispatcher.forward(request, response);
+
 
 	}
 

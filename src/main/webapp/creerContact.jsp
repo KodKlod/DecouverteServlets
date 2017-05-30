@@ -17,6 +17,7 @@
 			    <br>
 			    <br>
 			    <label for="prenom">Prénom</label>
+			    <input type="button" value="Bonjour">
 			    <input type="text" id="prenom" name="prenom">
 			    <br>
 			    <br>
