@@ -16,8 +16,29 @@
 			    <input type="text" id="nom" name="nom">
 			    <br>
 			    <br>
-			    <label for="prenom">Prénom</label>
-			    <input type="button" value="Bonjour">
+			    <label for="prenom">
+			    Prénom</label>
+			    	<!-- le script pourrait être déporté dans un .js -->
+			    	<script language="JavaScript">
+			    	function showCustomer(){
+			    		//console.log("Tu es dans la foinction")
+			    		var xhttp;
+			    		var str = document.getElementById("prenom").value;
+			    		xhttp = new XMLHttpRequest();
+			    		xhttp.onreadystatechange= function(){
+			    			if (this.readyState == 4 && this.status == 200){
+			    				document.getElementById("boutonHello").innerHTML = this.responseText;
+			    			}
+			    		};
+			    		console.log("Tu as passé le if")
+			    		xhttp.open("GET", "HelloAjax?prenom="+str, true);
+			    		xhttp.send();
+			    		console.log("Tu es arrivé là")
+			    	}
+			    	</script>
+			    <span id="boutonHello">
+			    <input type="button" value="Bonjour" onclick="showCustomer()">
+			    </span>
 			    <input type="text" id="prenom" name="prenom">
 			    <br>
 			    <br>

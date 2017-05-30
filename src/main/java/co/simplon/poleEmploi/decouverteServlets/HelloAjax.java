@@ -16,25 +16,19 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/HelloAjax")
 public class HelloAjax extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String message;
-
 	public void init() throws ServletException {
-		// Do required initialization
-		message = "Salut inconnu !";
 	}
     /**
      * @see HttpServlet#HttpServlet()
      */
     public HelloAjax() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see Servlet#getServletInfo()
 	 */
 	public String getServletInfo() {
-		// TODO Auto-generated method stub
 		return null; 
 	}
 
@@ -47,7 +41,7 @@ public class HelloAjax extends HttpServlet {
 		// Actual logic goes here.
 		String prenom = request.getParameter("prenom");
 		PrintWriter out = response.getWriter();
-		if (prenom == null) {
+		if (prenom == null || prenom.equals("")) {
 			response.setStatus(HttpServletResponse.SC_NOT_IMPLEMENTED);
 
 		} else {
@@ -60,7 +54,6 @@ public class HelloAjax extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
